@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<img src="{{ url_for('static', filename='logo.jpeg') }}" alt=""width="200" height="100">
+<body>
+    <div class="wrapper">
+        <h2>ISSNAF Registration Form</h2>
+    <div class="form-conteniar">
+        <form method="POST">
+            <div class="input-name">
+                <label>First Name </label>
+                <i class="fa fa-user lock"></i>
+                <input type="firstName" name="firstName" placeholder="First Name" class="name">
+                <span class="last">
+                <label>Last Name </label>
+                <i class="fa fa-user lock"></i>
+                <input type="lastName" name="lastName" placeholder="Last Name" class="name">
+                </span>
+            </div>
+            <div class="input-name">
+                <label>Primary Email </label>
+                <i class="fa fa-envelope email"></i>
+                <input type="email" name="primaryEmail" placeholder="Primary Email" required class="text-name1" id="primaryConfirm">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $(".text-name1").on("input",function(){
+                                if ($(this).val() == "")
+                                    $(".text-name1").css({backgroundColor:""});
+                                else {
+                                    if (checkEmail($(this).val()))
+                                        $(".text-name1").css({backgroundColor:"green"});
+                                    else
+                                        $(".text-name1").css({backgroundColor:"red"});
+                                }
+                            })
+                            function checkEmail(txt) {
+                                var patt = /[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/;
+                                if(patt.test(txt))
+                                    return true;
+                                else
+                                    return false;
+                            }
+                        })
+                    </script>
+            </div>
+            <div class="input-name">
+                <label>Confirm Primary Email </label>
+                <i class="fa fa-check square"></i>
+                <input type="email" name="confirmPrimaryEmail" placeholder="Confirm Primary Email" required class="text-name2" oninput="check(this)">
+                <script language='javascript' type='text/javascript'>
+                    function check(input) {
+                        if (input.value != document.getElementById('primaryConfirm').value) {
+                            input.setCustomValidity('This entry does not match the email above. Try again.');
+                        } else {
+                            input.setCustomValidity('');
+                        }
+                    }
+                </script>
+            </div>
+            <div class="input-name">
+                <label>Secondary Email </label>
+                <i class="fa fa-envelope email"></i>
+                <input type="email" name="secondaryEmail" placeholder="Secondary Email" required class="text-name3" id="secondaryConfirm">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $(".text-name3").on("input",function(){
+                                if ($(this).val() == "")
+                                    $(".text-name3").css({backgroundColor:""});
+                                else {
+                                    if (checkEmail($(this).val()))
+                                        $(".text-name3").css({backgroundColor:"green"});
+                                    else
+                                        $(".text-name3").css({backgroundColor:"red"});
+                                }
+                            })
+                            function checkEmail(txt) {
+                                var patt = /[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/;
+                                if(patt.test(txt))
+                                    return true;
+                                else
+                                    return false;
+                            }
+                        })
+                    </script>
+            </div>
+            <div class="input-name">
+                <label>Confirm Secondary Email </label>
+                <i class="fa fa-check square"></i>
+                <input type="email" name="confirmSecondaryEmail" placeholder="Confirm Secondary Email" required class="text-name4" oninput="check(this)">
+                <script language='javascript' type='text/javascript'>
+                    function check(input) {
+                        if (input.value != document.getElementById('secondaryConfirm').value) {
+                            input.setCustomValidity('This entry does not match the email above. Try again.');
+                        } else {
+                            input.setCustomValidity('');
+                        }
+                    }
+                </script>
+            </div>
+            <div class="input-name">
+                <input class="button" type="submit" name="submit" />
+            </div>
+        </form>
+
+    </div>  
+    </div>
+</body>
+</html>

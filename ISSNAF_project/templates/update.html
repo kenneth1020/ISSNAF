@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/membership.css') }}">
+    <link href="{{ url_for('static',filename='css/update.css') }}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<!-- <img src="logo.jpeg" alt=""width="200" height="100">--> 
+<img src="{{ url_for('static', filename='logo.jpeg') }}" alt=""width="200" height="100">
+<body>
+    <div class="wrapper">
+        <h2> <i class="fa fa-wrench" aria-hidden="true"></i> Account Update: </h2>
+        <h3>You are a member since: {{res[2]}}</h3>
+        <br> </br>
+        <h3>What would you like to update?</h3>
+    <div class="form-conteniar">
+        <form action="/updated" method='POST'>
+            <div class="input-name">
+                <i class="fa fa-envelope email"></i>
+                <input type="email" name="pid" value="{{res[0]}}" required class="text-name">
+            </div>
+           
+            <div class="input-name">
+                <i class="fa fa-envelope email"></i>
+                <input type="email" name="sid" value="{{res[1]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-image image"></i>
+                <input type="text" name="city" value="{{res[3]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-map-pin map"></i>
+                <input type="text" name="zc" value="{{res[4]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <select name="state" value= "{{res[5]}} class="state">
+                    <option>Select a state (Applicable to US and Canada)</option>
+                    <option>AL</option>
+                    <option>AK</option>
+                    <option>AZ</option>
+                    <option>AR</option>
+                    <option>CA</option>
+                    <option>CO</option>
+                    <option>CT</option>
+                    <option>DE</option>
+                    <option>FL</option>
+                    <option>GA</option>
+                    <option>HI</option>
+                    <option>ID</option>
+                    <option>IL</option>
+                    <option>IN</option>
+                    <option>IA</option>
+                    <option>KS</option>
+                    <option>KY</option>
+                    <option>LA</option>
+                    <option>ME</option>
+                    <option>MD</option>
+                    <option>MA</option>
+                    <option>MI</option>
+                    <option>MN</option>
+                    <option>MS</option>
+                    <option>MO</option>
+                    <option>MT</option>
+                    <option>NE</option>
+                    <option>NV</option>
+                    <option>NH</option>
+                    <option>NJ</option>
+                    <option>NM</option>
+                    <option>NY</option>
+                    <option>NC</option>
+                    <option>ND</option>
+                    <option>OH</option>
+                    <option>OK</option>
+                    <option>OR</option>
+                    <option>PA</option>
+                    <option>RI</option>
+                    <option>SC</option>
+                    <option>SD</option>
+                    <option>TN</option>
+                    <option>TX</option>
+                    <option>UT</option>
+                    <option>VT</option>
+                    <option>VA</option>
+                    <option>WA</option>
+                    <option>WV</option>
+                    <option>WI</option>
+                    <option>BC</option>
+                    <option>MB</option>
+                    <option>NB</option>
+                    <option>NL</option>
+                    <option>NT</option>
+                    <option>NS</option>
+                    <option>NU</option>
+                    <option>ON</option>
+                    <option>PE</option>
+                    <option>QC</option>
+                    <option>SK</option>
+                    <option>YT</option>
+                    <option>N/A</option>
+                </select>
+                <div class="arrow">
+                </div>
+            </div>      
+             
+            <div class="input-name">
+                <select name="country" value = "{{res[6]}}" class="country">
+                    <option>Select a country</option>
+                    <option>Afghanistan</option>
+                    <option>Albania</option>
+                    <option>Algeria</option>
+                    <option>Andorra</option>
+                    <option>Angola</option>
+                    <option>Antigua and Barbuda</option>
+                    <option>Argentina</option>
+                    <option>Armenia</option>
+                    <option>Australia</option>
+                    <option>Austria</option>
+                    <option>Azerbaijan</option>
+                    <option>Australia</option>
+                    <option>Bahamas</option>
+                    <option>Bahrain</option>
+                    <option>Bangladesh</option>
+                    <option>Barbados</option>
+                    <option>Belarus</option>
+                    <option>Belgium</option>
+                    <option>Belize</option>
+                    <option>Benin</option>
+                    <option>Bhutan</option>
+                    <option>Bolivia</option>
+                    <option>Bosnia and Herzegovina</option>
+                    <option>Botswana</option>
+                    <option>Brazil</option>
+                    <option>Brunei</option>
+                    <option>Bulgaria</option>
+                    <option>Burkina Faso</option>
+                    <option>Burundi</option>
+                    <option>Côte d'Ivoire</option>
+                    <option>Cabo Verde</option>
+                    <option>Cambodia</option>
+                    <option>Cameroon</option>
+                    <option>Canada</option>
+                    <option>Central African Republic</option>
+                    <option>Chad</option>
+                    <option>Chile</option>
+                    <option>China</option>
+                    <option>Colombia</option>
+                    <option>Comoros</option>
+                    <option>Congo (Congo-Brazzaville)</option>
+                    <option>Costa Rica</option>
+                    <option>Croatia</option>
+                    <option>Cuba</option>
+                    <option>Cyprus</option>
+                    <option>Czechia (Czech Republic)</option>
+                    <option>Democratic Republic of the Congo</option>
+                    <option>Denmark</option>
+                    <option>Djibouti</option>
+                    <option>Dominica</option>
+                    <option>Dominican Republic</option>
+                    <option>Ecuador</option>
+                    <option>Egypt</option>
+                    <option>El Salvador</option>
+                    <option>Equatorial Guinea</option>
+                    <option>Eritrea</option>
+                    <option>Estonia</option>
+                    <option>Eswatini (fmr. "Swaziland")</option>
+                    <option>Ethiopia</option>
+                    <option>Fiji</option>
+                    <option>Finland</option>
+                    <option>France</option>
+                    <option>Gabon</option>
+                    <option>Gambia</option>
+                    <option>Georgia</option>
+                    <option>Germany</option>
+                    <option>Ghana</option>
+                    <option>Greece</option>
+                    <option>Grenada</option>
+                    <option>Guatemala</option>
+                    <option>Guinea</option>
+                    <option>Guinea-Bissau</option>
+                    <option>Guyana</option>
+                    <option>Haiti</option>
+                    <option>Holy See</option>
+                    <option>Honduras</option>
+                    <option>Hungary</option>
+                    <option>Iceland</option>
+                    <option>India</option>
+                    <option>Indonesia</option>
+                    <option>Iran</option>
+                    <option>Iraq</option>
+                    <option>Ireland</option>
+                    <option>Israel</option>
+                    <option>Italy</option>
+                    <option>Jamaica</option>
+                    <option>Japan</option>
+                    <option>Jordan</option>
+                    <option>Kazakhstan</option>
+                    <option>Kenya</option>
+                    <option>Kiribati</option>
+                    <option>Kuwait</option>
+                    <option>Kyrgyzstan</option>
+                    <option>Laos</option>
+                    <option>Latvia</option>
+                    <option>Lebanon</option>
+                    <option>Lesotho</option>
+                    <option>Liberia</option>
+                    <option>Libya</option>
+                    <option>Liechtenstein</option>
+                    <option>Lithuania</option>
+                    <option>Luxembourg</option>
+                    <option>Madagascar</option>
+                    <option>Malawi</option>
+                    <option>Malaysia</option>
+                    <option>Maldives</option>
+                    <option>Mali</option>
+                    <option>Malta</option>
+                    <option>Marshall Islands</option>
+                    <option>Mauritania</option>
+                    <option>Mauritius</option>
+                    <option>Mexico</option>
+                    <option>Micronesia</option>
+                    <option>Moldova</option>
+                    <option>Monaco</option>
+                    <option>Mongolia</option>
+                    <option>Montenegro</option>
+                    <option>Morocco</option>
+                    <option>Mozambique</option>
+                    <option>Myanmar (formerly Burma)</option>
+                    <option>Namibia</option>
+                    <option>Nauru</option>
+                    <option>Nepal</option>
+                    <option>Netherlands</option>
+                    <option>New Zealand</option>
+                    <option>Nicaragua</option>
+                    <option>Niger</option>
+                    <option>Nigeria</option>
+                    <option>North Korea</option>
+                    <option>North Macedonia</option>
+                    <option>Norway</option>
+                    <option>Oman</option>
+                    <option>Pakistan</option>
+                    <option>Palau</option>
+                    <option>Palestine State</option>
+                    <option>Panama</option>
+                    <option>Papua New Guinea</option>
+                    <option>Paraguay</option>
+                    <option>Peru</option>
+                    <option>Philippines</option>
+                    <option>Poland</option>
+                    <option>Portugal</option>
+                    <option>Qatar</option>
+                    <option>Romania</option>
+                    <option>Russia</option>
+                    <option>Rwanda</option>
+                    <option>Saint Kitts and Nevis</option>
+                    <option>Saint Lucia</option>
+                    <option>Saint Vincent and the Grenadines</option>
+                    <option>Samoa</option>
+                    <option>San Marino</option>
+                    <option>Sao Tome and Principe</option>
+                    <option>Saudi Arabia</option>
+                    <option>Senegal</option>
+                    <option>Serbia</option>
+                    <option>Seychelles</option>
+                    <option>Sierra Leone</option>
+                    <option>Singapore</option>
+                    <option>Slovakia</option>
+                    <option>Slovenia</option>
+                    <option>Solomon Islands</option>
+                    <option>Somalia</option>
+                    <option>South Africa</option>
+                    <option>South Korea</option>
+                    <option>South Sudan</option>
+                    <option>Spain</option>
+                    <option>Sri Lanka</option>
+                    <option>Sudan</option>
+                    <option>Suriname</option>
+                    <option>Sweden</option>
+                    <option>Switzerland</option>
+                    <option>Syria</option>
+                    <option>Tajikistan</option>
+                    <option>Tanzania</option>
+                    <option>Thailand</option>
+                    <option>Timor-Leste</option>
+                    <option>Togo</option>
+                    <option>Tonga</option>
+                    <option>Trinidad and Tobago</option>
+                    <option>Tunisia</option>
+                    <option>Turkey</option>
+                    <option>Turkmenistan</option>
+                    <option>Tuvalu</option>
+                    <option>Uganda</option>
+                    <option>Ukraine</option>
+                    <option>United Arab Emirates</option>
+                    <option>United Kingdom</option>
+                    <option>United States of America</option>
+                    <option>Uruguay</option>
+                    <option>Uzbekistan</option>
+                    <option>Vanuatu</option>
+                    <option>Venezuela</option>
+                    <option>Vietnam</option>
+                    <option>Yemen</option>
+                    <option>Zambia</option>
+                    <option>Zimbabwe</option>
+                </select>
+                <div class="arrow">
+                </div>
+            </div>
+            <div class="input-name">
+                <i class="fa fa-users users"></i>
+                <input type="text" name="org" value = "{{res[7]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-university university"></i>
+                <input type="text" name="institute" value = "{{res[8]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <select name="dep" value = "{{res[9]}}" class="department">
+                    <option>Select Department</option>
+                    <option>Arts & Humanities</option>
+                    <option>Engineering</option>
+                    <option>Life Sciences</option>
+                    <option>Physical Sciences & Mathematics</option>
+                    <option>Social & Behavioral Sciences</option>
+                    <option>Other</option>
+                </select>
+                <div class="arrow">
+                </div>
+            </div>
+            <div class="input-name">
+                <i class="fa fa-building building"></i>
+                <input type="text" name="otherDep" value = "{{res[10]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <select name="discipline" value = "{{res[11]}}" class="discipline">
+                    <option>Select Discipline</option>
+                    <option>American Studies</option>
+                    <option>Classics</option>
+                    <option>Comparative Literature</option>
+                    <option>Feminist and Gender and Sexuality Studies</option>
+                    <option>Film Studies</option>
+                    <option>History</option>
+                    <option>History of Art and Architecture and Archaeology</option>
+                    <option>Language and Literature - English</option>
+                    <option>Language and Literature - French</option>
+                    <option>Language and Literature - German</option>
+                    <option>Language and Literature - Italian</option>
+                    <option>Language and Literature - Spanish</option>
+                    <option>Language and Literature - Other</option>
+                    <option>Music Studies</option>
+                    <option>Philosophy</option>
+                    <option>Race and Ethnicity and post-Colonial Studies</option>
+                    <option>Religion</option>
+                    <option>Rhetoric and Composition</option>
+                    <option>Theater and Performance Studies</option>
+                    <option>Visual Arts</option>
+                    <option>Aerospace Engineering</option>
+                    <option>Biomedical Engineering & Bioengineering</option>
+                    <option>Chemical Engineering</option>
+                    <option>Civil and Environmental Engineering</option>
+                    <option>Computational Engineering</option>
+                    <option>Computer Engineering</option>
+                    <option>Electrical Engineering</option>
+                    <option>Information Science</option>
+                    <option>Materials Science and Engineering</option>
+                    <option>Mechanical Engineering</option>
+                    <option>Operations Research and Systems Eng. and Industrial Eng.</option>
+                    <option>Nanoscience and Nanotechnology</option>
+                    <option>Nuclear Engineering</option>
+                    <option>Animal Sciences</option>
+                    <option>Biochemistry and Biophysics and Structural Biology</option>
+                    <option>Bioinformatics</option>
+                    <option>Biotechnology</option>
+                    <option>Cell and Developmental Biology</option>
+                    <option>Ecology and Evolutionary Biology</option>
+                    <option>Entomology</option>
+                    <option>Genetics and Genomics</option>
+                    <option>Food Science</option>
+                    <option>Forestry and Forest Sciences</option>
+                    <option>Immunology and Infectious Disease</option>
+                    <option>Kinesiology</option>
+                    <option>Medicine</option>
+                    <option>Microbiology</option>
+                    <option>Neuroscience and Neurobiology</option>
+                    <option>Nursing</option>
+                    <option>Nutrition</option>
+                    <option>Pharmacology and Toxicology and Environmental Health</option>
+                    <option>Physiology</option>
+                    <option>Plant Sciences</option>
+                    <option>Public Health</option>
+                    <option>Systems Biology</option>
+                    <option>Applied Mathematics</option>
+                    <option>Astrophysics and Astronomy</option>
+                    <option>Chemistry</option>
+                    <option>Computer Sciences</option>
+                    <option>Earth Sciences</option>
+                    <option>Mathematics</option>
+                    <option>Oceanography and Atmospheric Sciences and Meteorology</option>
+                    <option>Physics</option>
+                    <option>Statistics and Probability</option>
+                    <option>Agricultural and Resource Economics</option>
+                    <option>Anthropology</option>
+                    <option>Business</option>
+                    <option>Communication</option>
+                    <option>Criminology and Criminal Justice</option>
+                    <option>Economics</option>
+                    <option>Geography</option>
+                    <option>Law</option>
+                    <option>Linguistics</option>
+                    <option>Political Science</option>
+                    <option>Psychology</option>
+                    <option>Public Affairs and Public Policy and Public Administration</option>
+                    <option>Science and Technology Studies</option>
+                    <option>Sociology</option>
+                    <option>Urban Studies and Planning</option>
+                    <option>Other</option>
+                </select>
+                <div class="arrow">
+                </div>
+            </div>
+            
+            <div class="input-name">
+                <i class="fa fa-building building"></i>
+                <input type="text" name="otherDisc" value = "{{res[12]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-id-badge badge"></i>
+                <input type="text" name="position" value = "{{res[13]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-wrench wrench"></i>
+                <input type="text" name="speciality" value = "{{res[14]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <select name="degree" value = "{{res[15]}}" class="degree">
+                    <option>Select highest degree</option>
+                    <option>Laurea</option>
+                    <option>Laurea Triennale</option>
+                    <option>Laurea Magistrale</option>
+                    <option>Bachelor</option>
+                    <option>Master</option>
+                    <option>JD</option>
+                    <option>MBA</option>
+                    <option>MD</option>
+                    <option>MD PhD</option>
+                    <option>PhD</option>
+                    <option>Other</option>
+                </select>
+                <div class="arrow">
+                </div>
+            </div>
+            <div class="input-name">
+                <i class="fa fa-calendar calendar"></i>
+                <input type="text" name="yr" value = "{{res[16]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-graduation-cap cap"></i>
+                <input type="text" name="alma_matter" value = "{{res[17]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-linkedin linkedin"></i>
+                <input type="text" name="linkedin_prof" value = "{{res[18]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-search search"></i>
+                <input type="text" name="researchgate_prof" value = "{{res[19]}}" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-globe globe"></i>
+                <input type="text" name="website" value = "{{res[20]}}" required class="text-name">
+            </div>
+            <!--
+
+            
+            <p id="organization">To become a Member, you must meet the following  requirements:
+            <br id="organization">1. Be first generation Italian;
+            <br id="organization">2. Hold a university degree; 
+            <br id="organization">3. Conduct, or have conducted, research or development in any discipline; 
+            <br id="organization">4. Have, or have had, at least one year of affiliation with a public or private institution in North America.
+            <br id="organization">If you do not meet these requirements, you are welcome to become an Affiliate</p>
+                <label class="radio">
+                                <input class="radio-one" type="radio" checked="checked" name="rdiobtn">
+                                <span class="checkmark"></span>
+                                Member
+                            </label>
+                    
+                            <label class="radio">
+                                <input class="radio-two" type="radio" name="rdiobtn">
+                                <span class="checkmark"></span>
+                                Affiliate
+                            </label>
+            -->
+            <div class="input-name">
+                <i class="fa fa-comments comments"></i>
+                <input type="text" name="comments" value = "{{res[21]}}" required class="text-name">
+            </div>
+           
+            <div class="input-name">
+                <input class="button" type="submit" value="Update" />
+            </div>
+        </form>
+    </div>  
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    background: #f2f2f2;
+}
+.wrapper {
+    background-color: #fff;
+    width:500px;
+    padding: 25px;
+    margin: 50px auto 0;
+    border-top: 5px solid #1a8bf5;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    
+}
+.wrapper h2{
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.submit{
+    width: 90%;
+    position: relative;
+    margin: 20px auto;
+    
+}
+.lock{
+    padding:8px 11px;
+}
+.name{
+    width: 45%;
+    padding:8px 0 8px 40px;
+}
+.submit span{
+    margin-left: 35px;
+}
+.text-name{
+    width: 100%;
+    padding:8px 0 8px 40px;
+}
+.submit i{
+    position: absolute;
+    font-size: 18px;
+    border-right: 1px solid #cccccc;
+}
+.email{
+    padding: 8px;
+}
+.square{
+    padding: 8px;
+}
+.text-name, .name{
+    border: 1px solid #cccccc;
+    outline: none;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+}
+.text-name:hover, .name:hover{
+    background-color: #fafafa;
+}
+.text-name:focus, .name:focus{
+    -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+    -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+    box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+    border: 1px solid #1a8bf5;
+    background: #fafafa;
+}
+
+@-webkit-keyframes check {
+    0% { height: 0; width: 0; }
+    25% { height: 0; width: 7px; }
+    50% { height: 20px; width: 7px; }
+}
+
+@keyframes check {
+    0% { height: 0; width: 0; }
+    25% { height: 0; width: 7px; }
+    50% { height: 20px; width: 7px; }
+}
+.button{
+    background:#1a8bf5;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    
+}
+.button:hover{
+    background-color: #1a8bf5;
+}
+.button:hover{
+    background-color: #1a8bf5;
+}
+
+@media (max-width: 480px) {
+    .wrapper{
+        width: 100%;
+    }
+    .submit{
+        margin-bottom: -10px;
+    }
+    .name{
+        width: 100%;
+        padding:8px 0 8px 40px;
+        margin-bottom: 10px;
+    }
+    .submit span{
+        padding: 0;
+        margin:0;
+    }
+}

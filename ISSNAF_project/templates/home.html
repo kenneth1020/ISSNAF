@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/confirmation.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<img src="{{ url_for('static', filename='logo.jpeg') }}" alt=""width="200" height="100">
+<body>
+    <div class="wrapper">
+        <div style="text-align:center">
+            <h2>Welcome to ISSNAF</h2>
+            <h3>Select an option below to proceed.</h3>
+            <a href="{{ url_for('registration') }}">
+                <button>Sign Up</button>
+            </a>
+            <a href="{{ url_for('updateInfo') }}">
+                <button>Update</button>
+            </a>
+        </div>
+    </div>
+       
+       
+    </div>  
+    </div>
+</body>
+</html>

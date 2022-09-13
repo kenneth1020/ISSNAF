@@ -1,0 +1,42 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    background: #f2f2f2;
+}
+.wrapper {
+    background-color: #fff;
+    width:500px;
+    padding: 25px;
+    margin: 50px auto 0;
+    border-top: 5px solid #1a8bf5;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    
+}
+
+label {
+    display: block;
+    margin: 1px;
+    padding: 1px;
+}
+    
+.field {
+    margin: 1px;
+    padding: 1px;
+}
+    
+input:invalid {
+    background-color: #ffdddd;
+}
+    
+input:valid {
+    background-color: #ddffdd;
+}
+    
+input:required:invalid {
+    border-color: #c00000;
+}
+    
+input:required:valid{
+    border-color: darkgreen
+}
+

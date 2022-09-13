@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/updateInfo.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/31ced41654.js" crossorigin="anonymous"></script>
+</head>
+<img src="{{ url_for('static', filename='logo.jpeg') }}" alt=""width="200" height="100">
+<body>
+    <div class="wrapper">
+        <div style="text-align:center">
+            <h2>Update Info</h2>
+            <form action="/sendUpdateEmail" method='POST'></form>
+            <form>
+                <div class="input-name">
+                    Please enter primary email:
+                    <input type="text" class="email" name="primaryEmail">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $(".email").on("input",function(){
+                                if ($(this).val() == "")
+                                    $(".email").css({backgroundColor:""});
+                                else {
+                                    if (checkEmail($(this).val()))
+                                        $(".email").css({backgroundColor:"green"});
+                                    else
+                                        $(".email").css({backgroundColor:"red"});
+                                }
+                            })
+                            function checkEmail(txt) {
+                                var patt = /[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/;
+                                if(patt.test(txt))
+                                    return true;
+                                else
+                                    return false;
+                            }
+                        })
+                    </script>
+                </div>
+                <div class="submit">
+                    <input class="button" type="submit" name="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+       
+       
+    </div>  
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<img src="{{ url_for('static', filename='logo.jpeg') }}" alt=""width="200" height="100">
+<body>
+    <div class="wrapper">
+        <h2>ISSNAF Registration Form</h2>
+    <div class="form-conteniar">
+        <form method="POST">
+            <div class="input-name">
+                <i class="fa fa-user lock"></i>
+                <input type="firstName" name="firstName" placeholder="First Name" class="name">
+                <span class="last">
+                <i class="fa fa-user lock"></i>
+                <input type="lastName" name="lastName" placeholder="Last Name" class="name">
+                </span>
+            </div>
+            <div class="input-name">
+                <i class="fa fa-envelope email"></i>
+                <input type="email" name="primaryEmail" placeholder="Primary Email" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-check square"></i>
+                <input type="email" name="confirmPrimaryEmail" placeholder="Confirm Primary Email" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-envelope email"></i>
+                <input type="email" name="secondaryEmail" placeholder="Secondary Email" required class="text-name">
+            </div>
+            <div class="input-name">
+                <i class="fa fa-check square"></i>
+                <input type="email" name="confirmSecondaryEmail" placeholder="Confirm Secondary Email" required class="text-name">
+            </div>
+            <div class="input-name">
+                <input class="button" type="submit" name="submit" />
+            </div>
+        </form>
+
+    </div>  
+    </div>
+</body>
+</html>
